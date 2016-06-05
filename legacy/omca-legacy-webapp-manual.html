@@ -4,7 +4,7 @@
     <style>
 body { font-family: sans-serif; margin: 30px; }
 h4,th { text-align: left; padding: 6px; margin: 12px; }
-# img { border: 2px solid black; }
+ximg { border: 2px solid black; }
 div { padding-right: 20px; padding-bottom: 10px; float: left; }
 .subheader { background-color: chocolate; color: #FFFFFF; font-size: 24px; font-weight: bold; padding-left:8px;}
 .header-left { padding-right: 20px; padding-bottom: 10px; float: left; height: 40px; }
@@ -30,29 +30,29 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
             <p>In general, the webapps operate on <i>sets of records</i>, a set
               being defined as something like "all objects in a range of Museum numbers", e.g.,
               "2010.54.1" to "2010.54.10", or "all objects in a location or sequence of
-              locations" (e.g. "W3.10.b.2.13" to "W3.10.b.2.14,
-              23"), or "all the images in this folder on my computer". Typical operations performed are updating the data for sets of records, or creating move or
+              locations" (e.g. "W3.10.b.2.13" to "W3.10.b.2.14"), or "all the images in this folder on my computer". Typical operations performed are updating the data for sets of records, or creating move or
               inventory actions for them.
             </p>
-            <p>The overall UX ("user experience") is intended to be straightforward -- the forms contain only a few fields,
-              no more than a couple of buttons, and involve (usually) a short two-step interaction: 1) fill in search values,
+            <p>The overall UX ("user experience") is intended to be straightforward -- the forms contain only a few input fields,
+              no more than a couple of buttons, and involve (usually) a short two- or thre- step interaction: 1) fill in search values,
               click Search, 2) verify response, fill in data for individual items, and 3) click Update and wait patiently for
               results. (NB: the CollectionSpace backend (i.e. database system) is very slow, and this is the limiting factor
-              for the speed of the webapps.
+              for the speed of the webapps.)
             </p>
             <p>Besides move and data update operations, a few other webapps provide a means to view database content
               (e.g., authority hierarchies) in useful ways.</p>
 
       <p>There are three classes of webapps in use at OMCA:</p>
       <ol>
-        <li>Procedural webapps, which move objects and crates to other locations; and support upload media.</li>
-        <li>Data update webapps, which update data elements in (mostly collectionobject) records.</li>
-        <li>Reporting webapps, which return information about the collection (and do not change any data).</li>
+        <li><b>Procedural webapps</b>, which move objects and crates to other locations; and support upload media. That is, they
+        create <i>procedure records</i> in CollectionSpace</li>
+        <li><b>Data update webapps</b>, which update data elements in (mostly collectionobject) records.</li>
+        <li><b>Reporting webapps</b>, which return information about the collection (and do not change any data).</li>
       </ol>
           </td>
           <td style="vertical-align: top">
             <table cellpadding="8px" style="padding: 0px 0px 0px 30px;">
-              <trtr><td style="vertical-align: top">
+              <tr><td style="vertical-align: top">
             <img src="bellmans-map.png" width="160px"/>
               </td></tr>
                 <tr><td style="vertical-align: top">
