@@ -4,7 +4,7 @@
     <style>
 body { font-family: sans-serif; margin: 30px; }
 h4,th { text-align: left; padding: 6px; margin: 12px; }
-img { border: 2px solid black; }
+# img { border: 2px solid black; }
 div { padding-right: 20px; padding-bottom: 10px; float: left; }
 .subheader { background-color: chocolate; color: #FFFFFF; font-size: 24px; font-weight: bold; padding-left:8px;}
 .header-left { padding-right: 20px; padding-bottom: 10px; float: left; height: 40px; }
@@ -17,24 +17,62 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
       <h1>OMCA webapps: the missing manual</h1>
     </div>
     <div class="header-right">
-      <h5> <i>D R A F T<br/>21 July 2014 jbl, mtb</i> </h5>
+      <h5> <i>D R A F T<br/>6 June 2016 jbl</i> </h5>
     </div>
     </div>
     <div style="width: 97%">
       <h3 class="subheader">Introduction</h3>
-      <p>The webapps are a suite of browser-based tools which access the CollectionSpace database to provide critical functionality not provided by the "regular" interface.</p>
-      <p>In general, the webapps operate on <i>sets of records</i>, a set
-  being defined as something like "all objects in a range of Museum numbers", e.g.,
-  "1-100 to 1-105a", or "all objects in a location or sequence of
-  locations" (e.g. "Kroeber 51A, 500, 13" to "Kroeber 51A, 500,
-  23"). Typical operations performed are updating the data for sets of records, or creating move or inventory actions for them.</p>
-      <p>Besides move and data update operations, a few other webapps provide a means to view database content (e.g., authority hierarchies) in useful ways.</p>
+      <table border="0">
+        <tr>
+          <td style="vertical-align: top">
+            <p>The webapps are a suite of browser-based tools which access the CollectionSpace database to provide
+              critical functionality not provided by the "regular" interface.</p>
+            <p>In general, the webapps operate on <i>sets of records</i>, a set
+              being defined as something like "all objects in a range of Museum numbers", e.g.,
+              "2010.54.1" to "2010.54.10", or "all objects in a location or sequence of
+              locations" (e.g. "W3.10.b.2.13" to "W3.10.b.2.14,
+              23"), or "all the images in this folder on my computer". Typical operations performed are updating the data for sets of records, or creating move or
+              inventory actions for them.
+            </p>
+            <p>The overall UX ("user experience") is intended to be straightforward -- the forms contain only a few fields,
+              no more than a couple of buttons, and involve (usually) a short two-step interaction: 1) fill in search values,
+              click Search, 2) verify response, fill in data for individual items, and 3) click Update and wait patiently for
+              results. (NB: the CollectionSpace backend (i.e. database system) is very slow, and this is the limiting factor
+              for the speed of the webapps.
+            </p>
+            <p>Besides move and data update operations, a few other webapps provide a means to view database content
+              (e.g., authority hierarchies) in useful ways.</p>
+
       <p>There are three classes of webapps in use at OMCA:</p>
       <ol>
         <li>Procedural webapps, which move objects and crates to other locations; and support upload media.</li>
         <li>Data update webapps, which update data elements in (mostly collectionobject) records.</li>
         <li>Reporting webapps, which return information about the collection (and do not change any data).</li>
       </ol>
+          </td>
+          <td style="vertical-align: top">
+            <table cellpadding="8px" style="padding: 0px 0px 0px 30px;">
+              <trtr><td style="vertical-align: top">
+            <img src="bellmans-map.png" width="160px"/>
+              </td></tr>
+                <tr><td style="vertical-align: top">
+        <pre style="font-size: 9px;">
+He had bought a large map
+          representing the sea,
+Without the least vestige of land:
+And the crew were much pleased
+          when they found it to be
+A map they could all understand.
+        </pre>
+              </td></tr>
+              <tr><td colspan="2"><span  style="font-size: 9px;">
+            from <i>Fit the Second - The Bellman's Speech</i>.
+                <a href="http://literature.org/authors/carroll-lewis/the-hunting-of-the-snark/chapter-02.html">The Hunting of the Snark</a>. Lewis Carroll</span>
+              </td></tr>
+              </table>
+          </td>
+        </tr>
+      </table>
       <table width="100%">
         <tr>
           <td valign="top">
@@ -46,7 +84,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
                 <td>
                   <li><a href="#si">Systematic Inventory</a></li>
                   <li><a href="#mor">Move Object Range</a></li>
-                  <li><a href="#cm">Crate Move</a></li>
+                  <li><a href="#pm">Power Move</a></li>
                   <li><a href="#bmu">Bulk Media Upload</a></li>
                 </td>
               </tr>
@@ -95,13 +133,14 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
               <h4>Logging in</h4>
               <ul>
                 <li>Visit: 
-      <a target="new" href="/cgi-bin/cswaMain.py">/cgi-bin/cswaMain.py</a></li>
+      <a target="new" href="/cgi-bin/cswaMain.py">/cgi-bin/cswaMain.py</a>
+                <p>(You'll need to be logged in to the VPN of course.)</p></li>
   <p/>
     <li>Now you should see the "landing page" at right, showing the
   various webapps that are available.</li>
-  <li><span style="color:green">Green</span> links indicate a Development
+  <li>Green <span style="color:green">Dev</span> links indicate a Development
   webapp: Harmless! Feel free to play around and experiment!</li>
-    <li><span style="color:red">Red</span> links indicate a Production webapp: Do real work here.</li>
+    <li>Red <span style="color:red">Prod</span> links indicate a Production webapp: Do real work here.</li>
   <li>Clicking on one of the colored links will bring you to the
   desired webapp as shown below at right. Now, login with your own
   CSpace credentials.</li>
@@ -119,22 +158,22 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
         <table>
           <tr>
             <td style="page-break-before:avoid">
-              <div><a href="09.png"><img src="09.png" width="600px"/></a></div>
-              <p>This webapp allows registrars to reconcile the results of a (normally physical) inventory. User enters a <i>range</i> of storage locations and the objects in those locations are displayed; the user can then indicate (using the radio buttons) whether the object is indeed located or not. Other reports or the regular UI can be used to follow up on the objects that were not located.  [<i>NB: There is a printed "Systematic Inventory" PDF report, generated by iReport, that can be used alongside this webapp. The Systematic Inventory webapp is essentially an editable version of this PDF report. Data entry can be done quite quickly, in large part due to the close similarity of the two documents.</i>] </p>
+              <div><a href="si1.png"><img src="si1.png" width="600px"/></a></div>
+              <p>This webapp allows registrars to reconcile the results of a (normally physical) inventory. User enters a <i>range</i> of storage locations and the objects in those locations are displayed; the user can then indicate (using the radio buttons) whether the object is indeed located or not. Other reports or the regular UI can be used to follow up on the objects that were not located. </p>
             </td>
           </tr>
           <tr>
             <td style="page-break-before:avoid">
               <hr/>
-              <div><a href="16.png"><img src="16.png" width="600px"/></a></div>
+              <div><a href="mor1.png"><img src="mor1.png" width="600px"/></a></div>
               <p>This webapp allows registrars, collections managers, and conservators to record the movement of a specific range of Museum numbers to a new storage location (and a new crate, if so desired). Once the user has entered a range of Museum numbers, a new destination/storage location, a reason, and a handler and clicked "Search", all objects in that range of Museum numbers are displayed, along with their object names, counts, and current locations. The user can choose to exclude any objects in this range from the move by deselecting those objects using the provided checkboxes. Once "Move Selected Objects" is clicked, all non-excluded displayed objects will be recorded as having been moved to the new storage location.</p>
             </td>
           </tr>
           <tr>
             <td style="page-break-before:avoid">
               <hr/>
-              <div><a href="20.png"><img src="20.png" width="600px"/></a></div>
-              <p>This webapp allows registrars, collections managers, and conservators to record the movement of a box or other container&#x2014;and all of its contained objects&#x2014;to a new storage location. The user must specify the box, crate, or container name, its current storage location, and the desired new storage location. The user can choose to exclude any objects from the planned move (for instance, if objects were removed just prior to the planned move) by selecting the "Not Found" radio button.  Once "Move Objects" is clicked, all displayed objects not marked as "Not Found" will be recorded as having been moved to the new storage location, while remaining in their current box. Objects marked as "Not Found" will have their new location set to "Not Found," and will have to have their actual current location manually set in the CSpace UI. This webapp can also be used to inventory the contents of a box or crate, as it performs the same functionality as the Systematic Inventory webapp, but allows selection of a single box, rather than all boxes and all objects at a specific location.</p>
+              <div><a href="pm1.png"><img src="pm1.png" width="600px"/></a></div>
+              <p>This webapp allows registrars, collections managers, and conservators to record the movement of all objects at a location to a new storage location. The user must specify the current storage location and the desired new storage location. The user can choose to exclude any objects from the planned move (for instance, if objects were removed just prior to the planned move) by selecting the "Don't Move" radio button.  Once "Move Objects By Location" is clicked, all displayed objects marked as "Move" will be recorded as having been moved to the new storage location, while remaining in their current box. Objects marked as "Don't" will of course remain unchanged.</p>
             </td>
           </tr>
           <tr>
@@ -152,21 +191,21 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
         <table>
           <tr>
             <td style="page-break-before:avoid">
-              <div><a href="04.png"><img src="04.png" width="600px"/></a></div>
+              <div><a href="kir1.png"><img src="kir1.png" width="600px"/></a></div>
               <p>This webapp allows registrars, curators, and subject matter experts to quickly verify, edit, and/or update values in several important fields (the so-called "key information fields"). The objects displayed in the KIR webapp are selected according to their storage location(s). Depending on the application (e.g., NAGPRA, physical inventory, retrospective cataloging), the identity of these key fields can vary, so the webapp accommodates different sets of&#x2014;and configurations of&#x2014;data fields. In most cases these are editable, but for some (e.g., Donor), the KIR webapp serves as a way to quickly determine the state of data entry and to identify particular records that need to be updated in the CSpace UI.</p>
             </td>
           </tr>
           <tr>
             <td style="page-break-before:avoid">
               <hr/>
-              <div><a href="12.png"><img src="12.png" width="600px"/></a></div>
+              <div><a href="oir1.png"><img src="oir1.png" width="600px"/></a></div>
               <p>As with the KIR webapp, the OIR webapp allows registrars, curators, and subject matter experts to quickly verify, edit, and/or update values in several important fields. The sets of "Key Information" fields are the same as in the KIR webapp. The only difference between KIR and OIR is that in the OIR webapp, a range of Museum numbers is used to select the objects (instead of a range of storage locations).</p>
             </td>
           </tr>
           <tr>
             <td style="page-break-before:avoid">
               <hr/>
-              <div><a href="14.png"><img src="14.png" width="600px"/></a></div>
+              <div><a href="boe1.png"><img src="boe1.png" width="600px"/></a></div>
               <p>As with the KIR and OIR webapps, the BOE webapp allows registrars, curators, and subject matter experts to quickly update values in several important fields. The sets of available "Key Information" fields are the same as in the KIR and the OIR webapps. The BOE webapp differs in one very important aspect from either KIR or OIR: the values in the fields to be updated are not displayed by the BOE webapp. The user must know in advance what the existing values of these fields are, and must also be certain that they want to override all values in a particular field with a single value that the user can enter into each field. The user can update several fields at once, or only a single field at a time.</p>
             </td>
           </tr>
@@ -177,14 +216,14 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <tr>
             <td style="page-break-before:avoid">
               <hr/>
-              <div><a href="19.png"><img src="19.png" width="600px"/></a></div>
+              <div><a href="pl2.png"><img src="pl2.png" width="600px"/></a></div>
               <p>This webapp produces both packing lists and decanting lists, and offers PDF and CSV options for both. For packing lists, a range of storage locations is entered, and a list of all objects at those locations is generated, grouped by current storage location. To restrict this list to objects from a certain place or continent, a collection place can be specified. To produce decanting lists that facilitate organizing objects by cultural group, the user need only check the "group by culture" checkbox.</p>
             </td>
           </tr>
           <tr>
             <td style="page-break-before:avoid">
               <hr/>
-              <div><a href="26.png"><img src="26.png" width="600px"/></a></div>
+              <div><a href="hv1.png"><img src="hv1.png" width="600px"/></a></div>
               <p>This webapp allows users to see a visual representation of the organization of any of six hierarchical authorities (all but storage location). The desired hierarchy is calculated and displayed as a series of hierarchically nested facets, which are all set to be initially open. Users can click any facet arrow to collapse (or reopen) that facet, and can click on any term in the displayed hierarchy to see the corresponding full CSpace authority term record.</p>
             </td>
           </tr>
@@ -201,7 +240,8 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
 	<h2></h2>
       <a id="si"/>
         <h3 class="subheader">Systematic Inventory: Step 1, Initial Data Entry</h3>
-        <img src="07.png" width="800px"/> 
+        <img src="si1.png" width="800px"/>
+        <img src="si2.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>Start Location</li>
@@ -215,7 +255,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>Click Search</li>
         </ul>
         <h3 class="subheader">Systematic Inventory: Step 2, Inventory Input form</h3>
-        <img src="09.png" width="800px"/> 
+        <img src="si3.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>If an object is not located, click the Not Located radio button for that item</li>
@@ -226,7 +266,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>Click Update Locations to commit your inventory work to the database</li>
         </ul>
         <h3 class="subheader">Systematic Inventory: Step 3, Result Page</h3>
-        <img src="10.png" width="800px"/> 
+        <img src="si4.png" width="800px"/>
         <h4>Remarks</h4>
         <ul>
           <li>NB: the objects are not updated in order, alas.</li>
@@ -234,7 +274,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
         </ul>
       <a id="mor"/>
         <h3 class="subheader">Move Object Range: Step 1, Initial Data Entry</h3>
-        <img src="15.png" width="800px"/> 
+        <img src="mor1.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>Starting object number</li>
@@ -249,32 +289,43 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>A very powerful tool, use with caution!</li>
         </ul>
         <h3 class="subheader">Move Object Range: Step 2, Verification Page</h3>
-        <img src="16.png" width="800px"/> 
+        <img src="mor2.png" width="800px"/>
         <h4>Remarks</h4>
         <ul>
           <li>Shows the objects that will be moved.</li>
           <li>You can use the check boxes under "Move?" to prevent individual items from being moved.</li>
         </ul>
         <h3 class="subheader">Move Object Range: Step 3, Response Page</h3>
-        <img src="17.png" width="800px"/> 
+        <img src="mor3.png" width="800px"/>
         <h4>Remarks</h4>
         <ul>
           <li>Shows the result of each move.</li>
         </ul>
-      <a id="cm"/>
-        <h3 class="subheader">Crate Move: Step 1, Initial Data Entry</h3>
-        <img src="20.png" width="800px"/> 
+      <a id="pm"/>
+        <h3 class="subheader">Power Move: Steps 1 &amp; 2, Initial Data Entry and Verfication</h3>
+        <img src="pm1.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
-          <li>"from": Location where Crate is now</li>
-          <li>"to": Location you want to move Crate to</li>
+          <li>From Location</li>
+          <li>To Location</li>
+          <li>From Crate</li>
+          <li>To Crate</li>
           <li>Reason</li>
-          <li>Crate</li>
+          <li>Handler</li>
+          <li>Reason</li>
           <li>Handler</li>
         </ul>
         <h4>Remarks</h4>
         <ul>
-          <li>This webapp deserves to be used more than it is!</li>
+          <li>Shows the objects that will be moved.</li>
+          <li>You can use the check boxes under "Move?" to prevent individual items from being moved.</li>
+          <li>A very powerful tool, use with caution!</li>
+        </ul>
+        <h3 class="subheader">Power Move: Step 2, Response Page</h3>
+        <img src="pm2.png" width="800px"/>
+        <h4>Remarks</h4>
+        <ul>
+          <li>Shows the result of each move.</li>
         </ul>
       <a id="bmu"/>
         <h3 class="subheader">Bulk Media Upload</h3>
@@ -290,7 +341,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
       </ul>
       <a id="kir"/>
         <h3 class="subheader">Key Information Review: Step 1, Initial Data Entry</h3>
-        <img src="02.png" width="800px"/> 
+        <img src="kir0.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>Start Location</li>
@@ -305,7 +356,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>Then click Search</li>
         </ul>
         <h3 class="subheader">Key Information Review: Step 2, Verify Locations</h3>
-        <img src="03.png" width="800px"/> 
+        <img src="kir1.png" width="800px"/>
         <h4>Remarks</h4>
         <ul>
           <li>The locations in the range you entered is shown</li>
@@ -314,7 +365,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>When you are satisfied with the range, click Enumerate Objects</li>
         </ul>
         <h3 class="subheader">Key Information Review: Step 3, Data Entry Form</h3>
-        <img src="04.png" width="800px"/> 
+        <img src="kir2.png" width="800px"/>
         <h4>Remarks</h4>
         <ul>
           <li>Depending on which fieldset you selected, you will see a set of input fields</li>
@@ -322,14 +373,14 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>Many (most) of the fields are "authority controlled" -- you should pick an appropriate value from a vocabulary using the term matching feature.</li>
         </ul>
         <h3 class="subheader">Key Information Review: Step 4, Response Page</h3>
-        <img src="06.png" width="800px"/> 
+        <img src="kir4.png" width="800px"/>
         <h4>Remarks</h4>
         <ul>
           <li>At the moment, the museum numbers are not shown. If a problem is noted, you'll need to note the CSID and work back from there.</li>
         </ul>
       <a id="oir"/>
         <h3 class="subheader">Object Information Review: Step 1, Initial Data Entry</h3>
-        <img src="11.png" width="800px"/> 
+        <img src="oir1.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>Starting object number</li>
@@ -342,7 +393,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>Do please use the term matching feature to pick a valid object</li>
         </ul>
         <h3 class="subheader">Object Information Review: Step 2, Data Entry Form</h3>
-        <img src="12.png" width="800px"/> 
+        <img src="oir2.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>Depends on fieldset selected</li>
@@ -354,7 +405,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
         </ul>
       <a id="boe"/>
         <h3 class="subheader">Bulk Object Edit: Step 1, Initial Data Entry</h3>
-        <img src="14.png" width="800px"/> 
+        <img src="boe2.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>Starting object number</li>
@@ -367,7 +418,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
         </ul>
       <a id="plr"/>
         <h3 class="subheader">Packing List: Step 1, Initial Data Entry</h3>
-        <img src="18.png" width="800px"/> 
+        <img src="pl1.png" width="800px"/>
         <h4>Inputs and Outputs</h4>
         <ul>
           <li>Start Location</li>
@@ -380,7 +431,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
           <li>Note that the results can be download to a .csv file for use as a spreadsheet</li>
         </ul>
         <h3 class="subheader">Packing List: Step 2, Response Page</h3>
-        <img src="19.png" width="800px"/> 
+        <img src="pl2.png" width="800px"/>
         <h4>Remarks</h4>
         <ul>
           <li>Empty Locations are included in the output</li>
@@ -388,7 +439,7 @@ div { padding-right: 20px; padding-bottom: 10px; float: left; }
         </ul>
       </ul>
       <h3 class="subheader">Hierarchy Viewer: Result Page</h3>
-      <img src="26.png" width="800px"/>
+      <img src="hv1.png" width="800px"/>
       <a id="iv"/> 
       <h3 class="subheader">iReports Viewer</h3>
       <img src="ireports.png" width="800px"/>
